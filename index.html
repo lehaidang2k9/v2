@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lê Hải Đăng</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/lehaidang2k9/4gfree/main/lehaidang.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: radial-gradient(hsl(189, 88%, 74%), rgb(53, 110, 156));
+            color: white;
+            overflow-x: hidden;
+            font-family: 'Lora', serif;
+        }
+
+        .container {
+            text-align: center;
+            padding-top: 50px;
+            max-width: 100%;
+        }
+
+        .avatar {
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 1px solid #55afeb;
+        }
+
+        .avatar:hover {
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0px 10px 30px rgba(20, 127, 189, 0.493);
+        }
+
+        h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: bold;
+            font-size: 22px;
+            margin: 10px 0 8px 0;
+            color: #ffffff;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .ip {
+            font-family: 'Times New Roman', Times, serif;
+            color: #ffffff;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .info {
+            font-family: 'Times New Roman', Times, serif;
+            color: #ffffff;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        i {
+            vertical-align: middle;
+        }
+
+        .button {
+            margin-bottom: 20px;
+            background-color: white;
+            border: 0;
+            width: 300px;
+            padding: 15px 0;
+            border-radius: 100px;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+            display: inline-block;
+            transition-duration: 0.3s;
+            transition-property: color, background-color, transform, box-shadow;
+            -webkit-box-shadow: 0px 11px 22px -9px #000000;
+            box-shadow: 0px 11px 22px -9px #000000;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            color: white;
+            background-color: rgb(7, 85, 158);
+            transform: scale(1.1);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+            }
+
+            h3 {
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            .ip, .info {
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-family: 'Times New Roman', Times, serif;
+                color: #ffffff;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="avatar" src="https://raw.githubusercontent.com/lehaidang2k9/4gfree/main/lehaidang.png" alt="Avatar">
+        <h3>Lê Hải Đăng</h3>
+        <div class="info">
+            <p>🌟 Server free tạo bởi!<br>🎥 ADMIN : Lê Hải Đăng</p>
+        </div>
+        <div class="ip" id="ip-address">
+            <p>IP: <span id="user-ip">Đang lấy IP...</span></p>
+        </div>
+
+        <!-- Nút tải xuống với link MediaFire -->
+        <a class="button" href="https://lehaidang2k9.github.io/4gfree/" target="_blank">
+            <img src="https://www.mediafire.com/file/oecn1yg79as6rdb/Delta_X_V17__VNG_%2528V2.654%2529.apk/file" alt="Download Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            Tải xuống file
+        </a>
+    </div>
+
+    <script>
+        // Script để lấy IP người dùng
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-ip').textContent = data.ip;
+            })
+            .catch(err => {
+                document.getElementById('user-ip').textContent = 'Không thể lấy IP';
+            });
+    </script>
+</body>
+
+  </html>
